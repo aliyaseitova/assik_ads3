@@ -1,5 +1,9 @@
 public class MyHashTable<K, V> {
     private class HashNode<K, V> {
+        public K key;
+        public V value;
+        public MyHashTable.HashNode<K,V> next;
+
         private class HashNode<K, V> {
             private K key;
             private V value;
@@ -22,15 +26,33 @@ public class MyHashTable<K, V> {
     private int size;
 
     public MyHashTable() {
+        this.chainArray = (HashNode<K, V>[]) new HashNode[M];
+        this.size = 0;
     }
 
     public MyHashTable(int M) {
+        this.chainArray = (HashNode<K, V>[]) new HashNode[M];
+        this.size = 0;
+        this.M = M;
     }
 
     private int hash(K key) {
     }
 
     public void put(K key, V value) {
+        int index = hash(key);
+        HashNode<K, V> node = chainArray[index];
+        while (node!=null){
+            if (node.key.equals(key)){
+                node.value = value;
+                return;
+            }
+            node = node.next;
+        }
+        node = new HashNode<>(key, value);
+        node.next = chainArray[index];
+        chainArray[index] = node;
+        size++;
     }
 
     public V get(K key) {

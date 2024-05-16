@@ -5,17 +5,17 @@ public class Main {
     public static void main(String[] args) {
         MyBinarySearchTree binaryTree = new MyBinarySearchTree();
 
-        binaryTree.insert(5);
-        binaryTree.insert(3);
+        binaryTree.insert(10);
+        binaryTree.insert(34);
         binaryTree.insert(4);
-        binaryTree.insert(2);
-        binaryTree.insert(6);
-        binaryTree.insert(7);
+        binaryTree.insert(12);
+        binaryTree.insert(63);
+        binaryTree.insert(79);
 
         binaryTree.inOrder();
         System.out.println();
         System.out.println("Root data before remove: " +binaryTree.root.data);
-        binaryTree.remove(5);
+        binaryTree.remove(79);
         System.out.println();
         binaryTree.inOrder();
         System.out.println();

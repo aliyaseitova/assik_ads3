@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
         MyBinarySearchTree binaryTree = new MyBinarySearchTree();
 
-        binaryTree.insert(10);
-        binaryTree.insert(34);
+        binaryTree.insert(1);
         binaryTree.insert(4);
         binaryTree.insert(12);
+        binaryTree.insert(34);
         binaryTree.insert(63);
         binaryTree.insert(79);
 

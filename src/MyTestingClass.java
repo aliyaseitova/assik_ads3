@@ -25,6 +25,17 @@ public String getName(){
 }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        int hash = 17;
+        hash = 31 * hash + id;
+        hash = 31 * hash + (name != null ? name.hashCode() : 0);
+        return hash;
     }
+    @Override
+    public String toString() {
+        return "MyTestingClass{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
 }
